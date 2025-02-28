@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mrafzal <mrafzal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mafzal < mafzal@student.42warsaw.pl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/27 17:58:41 by mrafzal           #+#    #+#             */
-/*   Updated: 2025/02/27 18:09:24 by mrafzal          ###   ########.fr       */
+/*   Created: 2025/02/26 18:38:55 by mafzal            #+#    #+#             */
+/*   Updated: 2025/02/26 18:44:29 by mafzal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./get_next_line.h"
+#include "../includes/get_next_line.h"
 
-size_t ft_strlen(const char *s)
+char	*ft_strcpy(char *dest, const char *src)
 {
-    if (!s)
-        return 0;
-    size_t i = 0;
-    while (s[i])
-        i++;
-    return i;
-}
+	int i;
 
+	i = -1;
+	while (src[++i] != '\0')
+		dest[i] = src[i];
+	dest[i] = '\0';
+	return (dest);
+}
