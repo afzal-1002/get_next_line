@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mafzal < mafzal@student.42warsaw.pl>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 00:15:49 by mafzal            #+#    #+#             */
-/*   Updated: 2025/02/28 20:36:55 by mafzal           ###   ########.fr       */
+/*   Created: 2025/03/08 10:13:46 by mafzal            #+#    #+#             */
+/*   Updated: 2025/03/08 19:41:42 by mafzal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdarg.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
-# define BUFFER_SIZE 42
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-char	*ft_strchr(const char *s, int c);
-char	*ft_strcpy(char *dest, const char *src);
-char	*ft_strjoin(char *s1, char *s2);
+# ifndef MAX_FD
+#  define MAX_FD 4096
+# endif
+
 size_t	ft_strlen(const char *str);
+char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
+char	*ft_strjoin(char *s1, char *s2);
+
 char	*extract_line(char *storage);
 char	*save_remaining(char *storage);
 char	*get_next_line(int fd);
+char	*update_storage(char *storage, char *buffer, int bytes_read);
 
 #endif
